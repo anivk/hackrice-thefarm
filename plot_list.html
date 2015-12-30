@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.css">
+    <script src="jquery/jquery-1.11.3.js"></script>
+    <script src="jquery/jquery.mobile-1.4.5.js"></script>
+</head>
+
+<body>
+
+
+<div data-role="page" id="plots">
+
+    <div data-role="header" data-position="fixed">
+        <h1>My Farm</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div data-role="control_group" data-type="horizontal" id="plot_buttons">
+            <a href="#add_plot" class="ui-btn">Add New Plot</a>
+        </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <h1>Farm 2.0 &copy</h1>
+    </div>
+</div>
+
+
+
+</body>
+<script>
+    $(document).on("pagebeforecreate", function (event) {
+        for (var i = 10; i >= 1; i--) {
+            $("#plot_buttons").prepend('<a href="plot_viewer.html" data-transition="slide" class="ui-btn " id="btn' + i + '">Plot ' + i + '</a>');
+        }
+    });
+</script>
+
+</html>
